@@ -1,0 +1,10 @@
+# Projects' svn location
+1.EminMeris
+svn://192.168.0.3/eminproduction/trunk/applications/Android/EMMeris
+
+2.TrainSignIn
+svn://192.168.0.3/training/trunk/TrainSignIn
+
+3.chdriver
+svn://192.168.0.3/projects/trunk/chdriver
+
