@@ -1,0 +1,15 @@
+# To-do list
+
+1.TrainSignIn
+  a.Excel import history
+  b.Excel support 2007 or 2010 type
+
+  stauts:
+  a.created on 0106
+  b.created on 0106
+
+  result:
+  a.
+  b.
+
+2.
