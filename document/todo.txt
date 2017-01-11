@@ -1,15 +1,26 @@
 # To-do list
 
 1.TrainSignIn
-  a.Excel import history
-  b.Excel support 2007 or 2010 type
+  a.Add Excel imported history record foo
+  b.Add Excel support 2007 or 2010 type
+  c.Update SignDetail inner class property name spelled wrong:singInTime
 
-  stauts:
+  history:
   a.created on 0106
   b.created on 0106
+  c.created on 0106
 
-  result:
-  a.
-  b.
+  status:
+  a.NG
+  b.NG
+  c.Ok
 
-2.
+2.EmMeris
+  a.Add camera permision request for user
+  
+  history:
+  a:created on 0106
+
+  status:
+  a:NG
+

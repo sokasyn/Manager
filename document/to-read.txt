@@ -1,0 +1,7 @@
+# Some infomation to read
+1.Android Application储存数据导致的程序崩溃问题
+  http://www.jianshu.com/p/83f0046bc310
+
+  结论:最好不要在Application对象中储存数据
+
+
