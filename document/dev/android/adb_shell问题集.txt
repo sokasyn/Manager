@@ -1,0 +1,8 @@
+# Android adb shell
+1.adb 执行命令时 提示:'operation not permitted'
+  解决办法：以root身份执行(前提,android设备获取了root权限)
+
+  例如，模拟android设备开的应用过多,内存不足,系统杀掉app进程
+  
+  adb shell ps | grep 'com.emin'   //得到pid(进程id) 
+  adb shell "su -c 'kill - 9 <pid>'"
