@@ -1,0 +1,41 @@
+# 关于android程序U盘的写权限问题
+# 一般情况下,在程序的AndroidMenifest.xml中配置
+# <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+# 即可读写sdcard,另外,U盘也是可以读的,但是会有些权限的问题
+# 因为默认情况下WRITE_EXTERNAL_STORAGE android系统配置的是sdcard_rw,即sdcard读写,
+# 其他外部存储设备如U盘等只能读不能写(因为没有配置)
+
+################## 解决办法 ################### 
+
+以下,为在开发中的一种解决办法--更改设备的platform.xml源代码(既然是产品,我们定制的,这个更改可以接受)
+
+1.先获取设备的Root权限(如,下载360超级Root)
+
+2.有了root的权限后,下载RE文件管理器(如Root Explorer)
+
+3.打开RE文件管理器,找到/system/etc/permissions/platform.xml,
+  编辑之前,点击最上方的"挂载为可读写",长按该xml文件,通过文本编辑器打开
+
+4.找到
+	<permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
+		<group gid="sdcard_rw" />
+	</permission>
+
+  追加<group gid="media_rw" />,即:
+	<permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
+		<group gid="sdcard_rw" />
+		<group gid="media_rw" />
+	</permission>
+
+5.保存并退出
+6.重启设备
+7.如果不需要360超级Root和RE文件管理器软件,则卸载即可
+
+说明:
+以上配置后,通过adb shell的方式,随意拷贝一个sdcard上的文件到U盘进行验证,如果成功说明配置OK.
+
+备注:
+1.如果通过电脑编辑并push上去的时候,可能会出现问题,该文件的用户
+ 本该是root,然而push上传时,该文件的用户是sdcard_r
+
+

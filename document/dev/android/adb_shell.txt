@@ -1,0 +1,5 @@
+# Android adb shell
+1.adb push or adb pull operation not permitted
+  fix eg:
+  adb shell "su -c 'kill - 9 <pid>'"
+
