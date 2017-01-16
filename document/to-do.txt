@@ -24,3 +24,11 @@
   status:
   a:NG
 
+3.Linux
+  a.Add Symbolic link 
+
+  hisotry:
+  a:created on 0116
+
+  status:
+  a:NG

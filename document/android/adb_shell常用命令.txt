@@ -6,3 +6,14 @@
   
   adb shell ps | grep 'com.emin'   //得到pid(进程id) 
   adb shell "su -c 'kill - 9 <pid>'"
+
+2.安装apk
+  adb install <apk file path>
+
+  例如:windows下,apk包在F:\apk\app-release.pkg
+
+  adb install F:\apk\app-release.pkg
+
+  安装过程会有个百分比,成功后会显示个success
+ 
+

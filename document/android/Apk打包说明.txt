@@ -1,0 +1,47 @@
+﻿# 关于Android app打包的说明
+开发过程中,连接设备,运行后，app就安装到设备上了
+其实在build/outputs/apk目录下会有apk安装包,
+但是该安装包并不能直接拿来发布，因为设备是通过包名+签名来却分app的
+所以,我们必须生成签名的apk.
+
+备注:那为什么开发过程中运行就可以安装到设备,签名了吗?
+     答案是肯定的,Android 自动生成了一个用于测试的key store
+     位置在C:\Users\<用户名>\.android\debug.keystore
+     密码是 android
+
+############### 以下为制作步骤 ###############
+
+# IDE:Android Studio
+
+1.Build->Generated Signed APK
+2.在弹出的窗口中配置如下:
+  key store path:F:\apk\MettingSign\mettingSign.jks
+  key store password:emin2016
+  key alias:mettingSign
+  key password:emin2016
+
+  a.如果是第一次创建,则Create New
+    key store path:签名文件保存的路劲
+    password:密码  Confirm:确认密码
+    Alias:别名(方便以后选择)
+    password:签名的密码 Confirm:确认密码
+    Validity(years):有效年限
+
+    First and Last Name:名字(如:emin developer)
+    Organization Unit:公司或组织(选填)
+    Organization:组织(如:emin.digit.com)
+    City or Locality:城市(如Cheng Du)
+    State or Province:省(如Si Chuan)
+    Country Code:国家代码(86)
+
+3.在弹出的窗口中
+  a.配置APK Destination Folder,即要选择保存apk安装包到哪个文件夹
+    如:F:\apk\MettingSign
+  b.配置Build Type:有两种选择,debug和release,正式发布就选择 release
+
+
+############### 本地使用该apk ###############
+1.adb install F:\apk\MettingSign\app-release.apk
+
+
+

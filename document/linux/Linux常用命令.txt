@@ -1,0 +1,28 @@
+# Linux commonly used command
+
+1 link
+  语法: ln <源文件或文件夹> <自定义的名称>
+   
+a. 硬链接(ln)
+例如:
+在window系统下,我在远程svn服务器cheout了一个文件 file1.txt 到本地的 F:\svn\doc\file1.txt,
+但是我在第三方的版本管理,如git的远程服务器也想同步该文件,
+为了不影响svn(创建git仓库会生成相应的.git文件夹),我想在另外的位置创建该仓库，如F:\git\doc\file1.txt
+如何保证这4者的同步呢？当我提交到了svn仓库的同时,本地git的仓库下该文件也及时同步，然后我便可以git提交到远程git服务器了
+
+用硬链接能解决该问题
+
+$ cd /f/git/doc/
+$ ln /f/svn/doc/file1.txt file1.txt
+
+采用硬链接的方式,会在F:\git\doc\ 目录下得到一个F:\svn\doc\file1.txt的副本(通过ls -li可以查看到两者的索引节点是一致的)
+两者不管哪个的内容发生改变,另一者都会改变,这样我只需要改其中一个，就可以根据自己的需要,同步到svn远程服务器或git远程服务器了
+
+备注:
+tips 1.我使用的是windows下的git bash环境,所以文件路劲分隔符是"/",跟原生windows的"\"的不一致
+tips 2.删除的时候,另一方不会被删除
+tips 3.硬链接不能链接文件夹
+
+b.软链接(ln -s)
+
+
