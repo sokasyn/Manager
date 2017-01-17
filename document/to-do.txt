@@ -32,3 +32,13 @@
 
   status:
   a:NG
+
+4.Android
+  a.Apk的自动化打包配置
+
+  history
+  a.created 0117
+
+  status
+  a:NG
+
