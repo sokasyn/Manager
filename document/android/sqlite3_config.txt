@@ -1,0 +1,30 @@
+# 关于android开发真机设备调试使用slqite的配置
+
+1.使设备有root权限,各种工具就不说了(比如,我使用的小米的设备,下载了开发版本的,有root权限)
+
+2.终端命令:
+ 
+ # 高版本(1.0.32以上)有adb disable-verity,低版本没有,或者adb help看看有没有该命令
+ adb version
+ adb help
+ 
+ # 终端无回馈
+ adb root
+
+ # 成功会提示 Verity disabled on /system
+ # Now reboot your device for settings to take effect
+ adb disable-verity
+
+ adb reboot
+
+ # 重启之后可以往/system/xbin 目录下拷贝文件 sqlite3了
+ # 我之前是把sqlite3文件push到/sdcard 上的(因为这个操作不需要root都可以)
+ adb shell
+ cp /sdcard/sqlite3 /system/xbin
+
+ #确认
+ ls -l /system/xbin/sqlite3
+
+ # xbin 文件夹权限的配置,否则在执行sqlite3命令时会报sqlite3:can't execute:Permission denied
+ chmod 4755 /system/xbin/sqlite3
+

@@ -16,4 +16,18 @@
 
   安装过程会有个百分比,成功后会显示个success
  
+3.对指定的设备执行adb命令
+  adb -s <serial number> cmd
 
+  例如:连接指定的设备
+
+  1.adb devices 
+
+   # 命令输出
+     List of devices attached
+     d1caa7687d33    device
+
+  2.adb -s 1caa7687d33 shell
+
+  例如:pull指定的设备的文件到本地
+  adb -s d1caa7687d33 pull /sdcard/file1.txt F:\
