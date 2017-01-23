@@ -20,12 +20,18 @@
 
 2.EmMeris
   a.Add camera permision request for user
-  
+  b.关于js传入匿名函数作为回调的解决办法
+  c.等待框,如界面切换的等待框处理的共通抽离与美化
+
   history:
   a:created on 0106
+  b:created on 0122
+  c.created on 0123
 
   status:
   a:NG
+  b:NG
+  c:NG
 
 3.Linux
   a.Add Symbolic link 

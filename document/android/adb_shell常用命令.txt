@@ -1,5 +1,5 @@
 # Android adb shell
-1.adb 执行命令时 提示:'operation not permitted'
+1.模拟设备内存不足,系统杀掉程序进程
   解决办法：以root身份执行(前提,android设备获取了root权限)
 
   例如，模拟android设备开的应用过多,内存不足,系统杀掉app进程
@@ -31,3 +31,17 @@
 
   例如:pull指定的设备的文件到本地
   adb -s d1caa7687d33 pull /sdcard/file1.txt F:\
+
+4.adb pull 提示:'operation not permitted',或者因为权限提示"does not exist"
+  
+  比如我要pull /data/data 下面的文件(如数据库文件)
+  这个目录需要root 权限,而通常的adb pull 是以普通用户的身份执行的,所以被拒绝
+
+  解决办法
+  1.root设备
+  2.在终端输入adb root 命令
+  3.跟平常一样输入pull命令
+    adb pull /data/data/<your package>/file.db F:\myDir
+
+
+
